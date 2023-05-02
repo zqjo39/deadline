@@ -29,6 +29,8 @@ router.post('/item/add', addUserToViews, redirectGuests, todoController.addNewIt
 router.get('/item/edit/:id', addUserToViews, redirectGuests, todoController.viewEditItem);
 router.post('/item/edit/:id', addUserToViews, redirectGuests, todoController.saveEditItem);
 
+router.get('/item/viewNote/:id', addUserToViews, redirectGuests, todoController.viewNote);
+
 router.get('/item/delete/:id', addUserToViews, redirectGuests, todoController.deleteItem);
 router.get('/item/complete/:id',addUserToViews, redirectGuests,  todoController.makeItemComplete);
 router.get('/item/incomplete/:id', addUserToViews, redirectGuests, todoController.markItemIncomplete);

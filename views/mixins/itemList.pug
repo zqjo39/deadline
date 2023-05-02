@@ -13,7 +13,9 @@ mixin itemList(header, list)
               td
                 div.actions
                   a(href=`/item/delete/${item.id}` class="btn btn-danger" ) Delete
-                  a(href=`item/edit/${item.id}`) Edit
+                  a(href=`/item/edit/${item.id}`) Edit
+                  if item.notes
+                    a(href=`/item/viewNote/${item.id}`) View Note
                   if item.complete
                     a(href=`/item/incomplete/${item.id}`) Mark as Incomplete
                   else

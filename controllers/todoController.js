@@ -31,6 +31,7 @@ module.exports.displayAddItem = function(req, res) {
 module.exports.addNewItem = async function(req, res){
     await Todo.create({
         description: req.body.description,
+        notes: req.body.notes,
         user_id: req.user.id
     });
     res.redirect('/');
@@ -52,7 +53,10 @@ module.exports.viewEditItem = async function(req, res) {
 
 
 module.exports.saveEditItem = async function(req, res) {
-    await Todo.update({ description: req.body.description}, {
+    await Todo.update({
+        description: req.body.description,
+        notes: req.body.notes
+        }, {
         where:{
             id: req.params.id,
         }
@@ -73,7 +77,7 @@ module.exports.deleteItem = async function(req, res) {
 
 
 module.exports.makeItemComplete = async function(req, res) {
-    await Todo.update({ complete:  true}, {
+    await Todo.update({complete: true}, {
         where:{
             id: req.params.id,
         }
@@ -83,7 +87,7 @@ module.exports.makeItemComplete = async function(req, res) {
 
 
 module.exports.markItemIncomplete = async function(req, res) {
-    await Todo.update({ complete:  false}, {
+    await Todo.update({complete: false}, {
         where:{
             id: req.params.id,
         }
@@ -92,3 +96,8 @@ module.exports.markItemIncomplete = async function(req, res) {
 };
 
 
+module.exports.viewNote = async function(req, res) {
+    const todos = await Todo.findByPk(req.params.id);
+    console.log(todos.notes);
+    res.render('todos/notesItem', {todos})
+}
