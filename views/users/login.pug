@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    div.content
+        h3 Login
+        form(action = '/login' method = 'post')
+            div.input-form-row
+                div.input-container
+                    label(for = 'email') Email:
+                    input(type = 'text' name = 'email' id = 'email')
+                div.input-container
+                    label(for = 'password') Password:
+                    input(type = 'password' name = 'password' id = 'password')
+
+            div.form-button-row
+                button.button.primary(type = 'submit') Login
+        if error
+            p.error= error
