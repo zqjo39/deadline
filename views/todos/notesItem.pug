@@ -1,4 +1,13 @@
 extends ../layout
 
 block content
-    h3= item.description
+    div.content
+        div.row
+            div.title
+                h1 #{todos.description} - #{translate}
+            div.actions-notes
+                a.button(href='/') Back to Home
+                a.button(href=`/item/edit/${todos.id}`) Edit
+                a.button(href=`/item/delete/${todos.id}` class="btn btn-danger" ) Delete
+        ul
+            li= todos.notes

@@ -22,6 +22,7 @@ module.exports.displayAddItem = function(req, res) {
     const item = {
         name: '',
         description: '',
+        notes: ''
     }
     res.render('todos/newItem', {
         item
@@ -98,6 +99,16 @@ module.exports.markItemIncomplete = async function(req, res) {
 
 module.exports.viewNote = async function(req, res) {
     const todos = await Todo.findByPk(req.params.id);
-    console.log(todos.notes);
-    res.render('todos/notesItem', {todos})
+    let translate = translateBooleanToComplete(todos);
+    res.render('todos/notesItem', {todos, translate})
+}
+
+function translateBooleanToComplete(item) {
+    const isComplete = item.complete;
+    if (isComplete === true) {
+        return 'Completed!'
+    } else {
+        return 'Not Completed...'
+    }
+    return isComplete;
 }

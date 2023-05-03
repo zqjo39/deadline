@@ -207,3 +207,8 @@ nav h3{
   color: #312E81;
   font-size: 20px;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
