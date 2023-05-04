@@ -10,10 +10,18 @@ module.exports.listAll = async function(req, res) {
 
     let completeItems = todos.filter(item => item.complete);
     let incompleteItems = todos.filter(item => !item.complete);
+    // todo figure out this code's worth
+    // let pastItems = todos.filter(item => item.deadline < item.currentDate);
+    // let currentItems = todos.filter(item => item.deadline = item.currentDate);
+    // let futureItems = todos.filter(item => item.deadline > item.currentDate);
 
     res.render('todos/viewAll', {
         completeItems,
-        incompleteItems
+        incompleteItems,
+        // todo figure out this code's worth
+        // pastItems,
+        // currentItems,
+        // futureItems
     });
 };
 
@@ -22,6 +30,7 @@ module.exports.displayAddItem = function(req, res) {
     const item = {
         name: '',
         description: '',
+        deadline: new Date(),
         notes: ''
     }
     res.render('todos/newItem', {
@@ -32,6 +41,7 @@ module.exports.displayAddItem = function(req, res) {
 module.exports.addNewItem = async function(req, res){
     await Todo.create({
         description: req.body.description,
+        deadline: req.body.deadline,
         notes: req.body.notes,
         user_id: req.user.id
     });
@@ -56,7 +66,8 @@ module.exports.viewEditItem = async function(req, res) {
 module.exports.saveEditItem = async function(req, res) {
     await Todo.update({
         description: req.body.description,
-        notes: req.body.notes
+        notes: req.body.notes,
+        deadline: req.body.deadline
         }, {
         where:{
             id: req.params.id,
@@ -112,3 +123,8 @@ function translateBooleanToComplete(item) {
     }
     return isComplete;
 }
+
+// todo work on making this actually work
+// function isBeforeTodayOrAfter() {
+//     const date =
+// }

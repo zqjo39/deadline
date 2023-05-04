@@ -9,7 +9,9 @@ mixin itemList(header, list)
       tbody
           each item in list
             tr
-              td.align-left= item.description
+              td
+                div.align-left= item.description
+                div.align-left= item.friendlyDate
               td
                 div.actions
                   a(href=`/item/delete/${item.id}` class="btn btn-danger" ) Delete

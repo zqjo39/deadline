@@ -5,7 +5,10 @@ mixin todoForm(item, saveUrl, cancelUrl)
       input(type="text" name="description" id="description" value=`${item.description}`)
 
       label(for="notes") Item Notes
-      input(type="text" name="notes" id="notes")
+      input(type="text" name="notes" id="notes" value=`${item.notes}`)
+
+      label(for="deadline") Deadline
+      input(type="date" name="deadline" id="deadline" value=`${item.deadline}`)
 
     div.form-button-row
       a.button(href=cancelUrl) Cancel

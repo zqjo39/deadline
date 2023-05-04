@@ -6,13 +6,17 @@ there's only two big modifications:
  - adding a notes system to each item
 
 SHOULD BE EASY
-just follow 6.1 and 5.3 and you'll be good.
+just follow 6.1, 6.4 and 5.3 and you'll be good.
 ok?
 ok.
 
 todo
 [] LOG INTO GITHUB PLEASE-
 [~] change out tables
-[] figure out how to use moment-
-[] create notes page for items
-[]
+[~] create notes page for items
+[~] figure out how to use moment-
+[] FIGURE OUT HOW TO IMPLEMENT MOMENT
+    [] how to compare dates (and use those comparisons)
+    [] how to set deadlines with time AND calender
+[] create function to keep completed items ouT OF THE INCOMPLETE AND THUS DUPLICATING-
+[] make everything look nice

@@ -8,7 +8,18 @@ block content
       header.page-header All Todos
 
     div.section-list
-      +itemList('Incomplete Items',incompleteItems)
+      +itemList('Incomplete Items', incompleteItems)
+
+      // todo figure out this code's worth
+
+    //div.section-list
+    //  +itemList('Past Due', pastItems)
+    //
+    //div.section-list
+    //  +itemList('Today', currentItems)
+    //
+    //div.section-list
+    //  +itemList('In The Future', futureItems)
 
     div.button-row
       a.button.primary(href="/item/add") Add New Item
