@@ -1,4 +1,5 @@
 const { Todo } = require('../models');
+const moment = require('moment');
 
 
 module.exports.listAll = async function(req, res) {
@@ -10,18 +11,18 @@ module.exports.listAll = async function(req, res) {
 
     let completeItems = todos.filter(item => item.complete);
     let incompleteItems = todos.filter(item => !item.complete);
-    // todo figure out this code's worth
-    // let pastItems = todos.filter(item => item.deadline < item.currentDate);
-    // let currentItems = todos.filter(item => item.deadline = item.currentDate);
-    // let futureItems = todos.filter(item => item.deadline > item.currentDate);
+    // todo FIGURE OUT HOW TO SEPARATE PAST AND PRESENT AND WE'RE GOLDEN
+    // oh and also complete items are appearing in the incomplete, figure out how to fix that too
+    let pastItems = todos.filter(item => item.past);
+    let currentItems = todos.filter(item => item.present);
+    let futureItems = todos.filter(item => item.future);
 
     res.render('todos/viewAll', {
         completeItems,
         incompleteItems,
-        // todo figure out this code's worth
-        // pastItems,
-        // currentItems,
-        // futureItems
+        pastItems,
+        currentItems,
+        futureItems
     });
 };
 
@@ -123,8 +124,3 @@ function translateBooleanToComplete(item) {
     }
     return isComplete;
 }
-
-// todo work on making this actually work
-// function isBeforeTodayOrAfter() {
-//     const date =
-// }

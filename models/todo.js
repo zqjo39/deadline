@@ -21,12 +21,24 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     deadline: DataTypes.DATE,
     // todo figure out this code's worth
-    // currentDate: {
-    //   type: DataTypes.VIRTUAL,
-    //   get() {
-    //     return moment().subtract(10, 'days').calendar()
-    //   }
-    // },
+    past: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return moment(this.deadline).isBefore(moment())
+      }
+    },
+    present: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return moment(this.deadline).isSame(moment())
+      }
+    },
+    future: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return moment(this.deadline).isAfter(moment())
+      }
+    },
     friendlyDate: {
       type: DataTypes.VIRTUAL,
       get() {
