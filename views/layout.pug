@@ -6,11 +6,11 @@ html
   body
     nav
       div.container
-        h3 Todo App
+        a(href = '/') Todo App
         ul
           if user
             li
-              div Hello #{user.displayName}!
+              a(href = '/profile') Hello #{user.displayName}!
             li
               a(href = '/logout') Log Out
           else

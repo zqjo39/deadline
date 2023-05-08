@@ -41,6 +41,12 @@ module.exports.authenticate = passport.authenticate('local', {
     failureMessage: true
 });
 
+module.exports.viewProfile = async function(req, res) {
+    const user = await User.findByPk(req.params.id);
+    console.log(user);
+    res.render('todos/profile', {user})
+}
+
 module.exports.logout = function (req, res) {
     req.logout();
     res.redirect('/login');

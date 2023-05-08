@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     complete: DataTypes.BOOLEAN,
     user_id: DataTypes.INTEGER,
     deadline: DataTypes.DATE,
-    // todo figure out this code's worth
     past: {
       type: DataTypes.VIRTUAL,
       get() {
