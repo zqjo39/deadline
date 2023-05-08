@@ -24,19 +24,19 @@ module.exports = (sequelize, DataTypes) => {
     past: {
       type: DataTypes.VIRTUAL,
       get() {
-        return moment(this.deadline).isBefore(moment())
+        return moment(this.deadline).isBefore(moment(), 'day')
       }
     },
     present: {
       type: DataTypes.VIRTUAL,
       get() {
-        return moment(this.deadline).isSame(moment())
+        return moment(this.deadline).isSame(moment(), 'day')
       }
     },
     future: {
       type: DataTypes.VIRTUAL,
       get() {
-        return moment(this.deadline).isAfter(moment())
+        return moment(this.deadline).isAfter(moment(), 'day')
       }
     },
     friendlyDate: {

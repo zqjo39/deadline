@@ -1,6 +1,4 @@
 const { Todo } = require('../models');
-const moment = require('moment');
-
 
 module.exports.listAll = async function(req, res) {
     const todos = await Todo.findAll({
@@ -9,17 +7,13 @@ module.exports.listAll = async function(req, res) {
         }
     });
 
-    let completeItems = todos.filter(item => item.complete);
-    let incompleteItems = todos.filter(item => !item.complete);
-    // todo FIGURE OUT HOW TO SEPARATE PAST AND PRESENT AND WE'RE GOLDEN
-    // oh and also complete items are appearing in the incomplete, figure out how to fix that too
-    let pastItems = todos.filter(item => item.past);
-    let currentItems = todos.filter(item => item.present);
-    let futureItems = todos.filter(item => item.future);
 
+    let completeItems = todos.filter(item => item.complete);
+    let pastItems = todos.filter(item => item.past && !item.complete);
+    let currentItems = todos.filter(item => item.present && !item.complete);
+    let futureItems = todos.filter(item => item.future && !item.complete);
     res.render('todos/viewAll', {
         completeItems,
-        incompleteItems,
         pastItems,
         currentItems,
         futureItems

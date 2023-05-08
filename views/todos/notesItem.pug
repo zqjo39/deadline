@@ -5,6 +5,8 @@ block content
         div.row
             div.title
                 h1 #{todos.description} - #{translate}
+                div.subtitle
+                    h3 Complete by #{todos.deadline}
             div.actions-notes
                 a.button(href='/') Back to Home
                 a.button(href=`/item/edit/${todos.id}`) Edit
