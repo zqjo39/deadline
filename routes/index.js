@@ -22,6 +22,8 @@ function redirectGuests(req, res, next) {
 /* GET home page. */
 router.get('/', addUserToViews, redirectGuests, todoController.listAll);
 
+router.get('/profile', addUserToViews, redirectGuests, todoController.viewProfile);
+
 router.get('/item/add', addUserToViews, redirectGuests, todoController.displayAddItem);
 router.post('/item/add', addUserToViews, redirectGuests, todoController.addNewItem);
 
@@ -40,7 +42,6 @@ router.post('/register', addUserToViews, userController.register);
 router.get('/login', addUserToViews, userController.renderLogin);
 router.post('/login', addUserToViews, userController.authenticate);
 
-router.get('/profile', addUserToViews, redirectGuests, userController.viewProfile);
 
 router.get('/logout', addUserToViews, userController.logout);
 

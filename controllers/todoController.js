@@ -1,4 +1,4 @@
-const { Todo } = require('../models');
+const {Todo, User} = require('../models');
 
 module.exports.listAll = async function(req, res) {
     const todos = await Todo.findAll({
@@ -20,6 +20,11 @@ module.exports.listAll = async function(req, res) {
     });
 };
 
+module.exports.viewProfile = async function(req, res) {
+    const user = await User.findByPk(req.params.id);
+    console.log(user);
+    res.render('todos/profile', {user})
+}
 
 module.exports.displayAddItem = function(req, res) {
     const item = {
