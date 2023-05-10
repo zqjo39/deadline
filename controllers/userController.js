@@ -21,7 +21,8 @@ module.exports.register = async function (req, res) {
             email: req.body.email,
             password: md5(req.body.password),
             first_name: req.body.first_name,
-            last_name: req.body.last_name
+            last_name: req.body.last_name,
+            subscription_id: 1
         });
         res.redirect('/');
     }
@@ -40,6 +41,51 @@ module.exports.authenticate = passport.authenticate('local', {
     failureRedirect: '/login',
     failureMessage: true
 });
+
+module.exports.viewProfile = async function(req, res) {
+    const user = await User.findByPk(req.user.id);
+    console.log(user);
+    res.render('todos/profile', {user})
+}
+
+// todo come back to the "setTo"s later, it's got something to do with passport, since it was working before that
+    // either that or the model's got something up with it
+module.exports.setToBasic = async function(req, res) {
+    const user = await User.findByPk(req.user.id);
+    await User.update({
+        subscription_id: 1
+    }, {
+        where: {
+            id: req.user.id
+        }
+    })
+    res.redirect('/', {user});
+}
+
+module.exports.setToStandard = async function(req, res) {
+    const user = await User.findByPk(req.user.id);
+    await User.update({
+        subscription_id: 2
+    }, {
+        where: {
+            id: req.user.id
+        }
+    })
+    res.redirect('/' , {user});
+}
+
+module.exports.setToPremium = async function(req, res) {
+    const user = await User.findByPk(req.user.id);
+    await User.update({
+        subscription_id: 3
+    }, {
+        where: {
+            id: req.user.id
+        }
+    })
+    res.redirect('/', {user});
+}
+
 
 module.exports.logout = function (req, res) {
     req.logout();

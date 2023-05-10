@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Subscription.belongsToMany(models.Permission, {
+        through: models.SubscriptionPermission,
+        as: 'permissions',
+        foreignKey: 'subscription_id',
+        otherKey: 'permission_id'
+      })
     }
   }
   Subscription.init({

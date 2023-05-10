@@ -1,6 +1,6 @@
 const passport = require('passport');
 const {Strategy} = require('passport-local');
-const {User} = require('../models');
+const {User, Subscription, Permission} = require('../models');
 const md5 = require('md5');
 
 async function authenticate(username, password, done) {
@@ -37,9 +37,22 @@ passport.serializeUser(function (user, cb) {
 });
 
 passport.deserializeUser(async function (user, cb) {
-    // const dbUser = await User.findByPk(user.id);
+    const dbUser = await User.findByPk(user.id, {
+        include: [
+            {
+                model: Subscription,
+                as: 'subscription',
+                include: [
+                    {
+                        model: Permission,
+                        as: 'permissions'
+                    }
+                ],
+            }
+        ]
+    });
     process.nextTick(function () {
-        return cb(null, user);
+        return cb(null, dbUser);
     });
 });
 

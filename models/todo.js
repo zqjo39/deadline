@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // todo add relationship (it's on 6.3, slide 17)
     }
   }
   Todo.init({

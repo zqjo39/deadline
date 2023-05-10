@@ -16,12 +16,21 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'subscription_id'
       })
     }
+    can(action) {
+      let match = this.subscription.permission.find(function(permission) {
+        return permission.name === action
+      });
+
+      if(match) return true;
+      return false
+    }
   };
   User.init({
     email: DataTypes.STRING,
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    subscription_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
