@@ -22,7 +22,9 @@ module.exports.register = async function (req, res) {
             password: md5(req.body.password),
             first_name: req.body.first_name,
             last_name: req.body.last_name,
-            subscription_id: 1
+            subscription_id: 1,
+            font_id: 1,
+            theme_id: 1
         });
         res.redirect('/');
     }
@@ -46,6 +48,22 @@ module.exports.viewProfile = async function(req, res) {
     const user = await User.findByPk(req.user.id);
     console.log(user);
     res.render('todos/profile', {user})
+}
+
+module.exports.renderSettings = function(req, res) {
+    res.render('todos/settings');
+}
+
+module.exports.viewSettings = async function(req, res) {
+    await User.update({
+        font_id: req.body.font_id,
+        theme_id: req.body.theme_id
+    }, {
+        where: {
+            id: req.user.id
+        }
+    })
+    res.redirect('/');
 }
 
 // todo come back to the "setTo"s later, it's got something to do with passport, since it was working before that
@@ -91,3 +109,32 @@ module.exports.logout = function (req, res) {
     req.logout();
     res.redirect('/login');
 };
+
+// todo find a way to use these to change fonts and themes; look at idcard for reference
+function translateFont(font_id) {
+    if (font_id === 1) {
+        return 'lucida-grande'
+    } else if (font_id === 2) {
+        return 'arial'
+    } else if (font_id === 3) {
+        return 'times-new-roman'
+    } else if (font_id === 4) {
+        return 'comic-sans'
+    } else {
+        return ''
+    }
+}
+
+function translateTheme(theme_id) {
+    if (theme_id === 1) {
+        return 'light'
+    } else if (theme_id === 2) {
+        return 'dark'
+    } else if (theme_id === 3) {
+        return 'retro'
+    } else if (theme_id === 4) {
+        return 'pastel'
+    } else {
+        return ''
+    }
+}

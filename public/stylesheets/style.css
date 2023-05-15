@@ -212,3 +212,39 @@ nav h3{
   display: flex;
   justify-content: space-between;
 }
+
+.font.lucida-grande {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.font.arial {
+  font: 14px "Arial", Helvetica, Arial, sans-serif;
+}
+
+.font.times-new-roman {
+  font: 14px "Times New Roman", Helvetica, Arial, sans-serif;
+}
+
+.font.comic-sans {
+  font: 14px "Comic Sans MS", Helvetica, Arial, sans-serif;
+}
+
+.theme.light {
+  background: #f3f4f6;
+  color: black;
+}
+
+.theme.dark {
+  background: #f3f4f6;
+  color: white;
+}
+
+theme.retro {
+  background: dimgrey;
+  color: yellow;
+}
+
+theme.pastel {
+  background: lightyellow;
+  color: mediumslateblue;
+}

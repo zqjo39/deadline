@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
     can(action) {
-      let match = this.subscription.permission.find(function(permission) {
+      let match = this.subscription.permissions.find(function(permission) {
         return permission.name === action
       });
 
@@ -30,7 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     password: DataTypes.STRING,
-    subscription_id: DataTypes.INTEGER
+    subscription_id: DataTypes.INTEGER,
+    font_id: DataTypes.INTEGER,
+    theme_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',

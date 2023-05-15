@@ -1,5 +1,5 @@
 const passport = require('passport');
-const {Strategy} = require('passport-local');
+const {Strategy} = require('passport-local').Strategy;
 const {User, Subscription, Permission} = require('../models');
 const md5 = require('md5');
 
@@ -30,14 +30,14 @@ const validationStrategy = new Strategy({
 
 passport.use(validationStrategy);
 
-passport.serializeUser(function (user, cb) {
+passport.serializeUser(function (user, done) {
     process.nextTick(function() {
-        cb(null, {id: user.id, username: user.email, displayName: user.displayName});
+        done(null, {id: user.id, username: user.email, displayName: user.displayName});
     });
 });
 
-passport.deserializeUser(async function (user, cb) {
-    const dbUser = await User.findByPk(user.id, {
+passport.deserializeUser(async function (user, done) {
+    const userModel = await User.findByPk(user.id, {
         include: [
             {
                 model: Subscription,
@@ -52,7 +52,7 @@ passport.deserializeUser(async function (user, cb) {
         ]
     });
     process.nextTick(function () {
-        return cb(null, dbUser);
+        return done(null, userModel);
     });
 });
 

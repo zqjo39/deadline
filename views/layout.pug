@@ -10,7 +10,9 @@ html
         ul
           if user
             li
-              a(href = '/profile') Hello #{user.displayName}!
+              a(href = '/profile') Hello #{user.first_name}!
+            li
+              a(href = '/settings') Settings
             li
               a(href = '/logout') Log Out
           else

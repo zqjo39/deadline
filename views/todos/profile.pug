@@ -3,9 +3,10 @@ extends ../layout
 block content
     div.content
         h1 Hello #{user.first_name}!
-        if user.can('add basic badge')
-            a.button.primary(href = '/basic') Revert to Basic
-        if user.can('add standard badge')
-            a.button.primary(href = '/standard') Subscribe to Standard
-        if user.can('add premium badge')
-            a.button.primary(href = '/premium') Subscribe to Premium
+        //if user.can('add basic badge')
+        a.button.primary(href = '/basic') Revert to Basic
+        //if user.can('add standard badge')
+        a.button.primary(href = '/standard') Subscribe to Standard
+        //if user.can('add premium badge')
+        a.button.primary(href = '/premium') Subscribe to Premium
+        

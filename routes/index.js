@@ -40,6 +40,9 @@ router.post('/register', addUserToViews, userController.register);
 router.get('/login', addUserToViews, userController.renderLogin);
 router.post('/login', addUserToViews, userController.authenticate);
 
+router.get('/settings', addUserToViews, redirectGuests, userController.renderSettings);
+router.post('/settings', addUserToViews, redirectGuests, userController.viewSettings);
+
 router.get('/profile', addUserToViews, redirectGuests, userController.viewProfile);
 router.get('/basic', addUserToViews, redirectGuests, userController.setToBasic);
 router.get('/standard', addUserToViews, redirectGuests, userController.setToStandard);
