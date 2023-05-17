@@ -1,4 +1,4 @@
-const {Todo} = require('../models');
+const {Todo, User} = require('../models');
 
 module.exports.listAll = async function(req, res) {
     const todos = await Todo.findAll({
@@ -7,7 +7,7 @@ module.exports.listAll = async function(req, res) {
         }
     });
 
-
+    // todo define theme and font
     let completeItems = todos.filter(item => item.complete);
     let pastItems = todos.filter(item => item.past && !item.complete);
     let currentItems = todos.filter(item => item.present && !item.complete);
@@ -16,8 +16,12 @@ module.exports.listAll = async function(req, res) {
         completeItems,
         pastItems,
         currentItems,
-        futureItems
+        futureItems,
+        font: translateFont(req.body.font_id),
+        theme: translateTheme(req.body.theme_id)
     });
+    console.log(theme);
+    console.log(font);
 };
 
 module.exports.displayAddItem = function(req, res) {
@@ -116,4 +120,33 @@ function translateBooleanToComplete(item) {
         return 'Not Completed...'
     }
     return isComplete;
+}
+
+// todo find a way to use these to change fonts and themes; look at idcard for reference
+function translateFont(font_id) {
+    if (font_id === 1) {
+        return 'lucida-grande'
+    } else if (font_id === 2) {
+        return 'arial'
+    } else if (font_id === 3) {
+        return 'times-new-roman'
+    } else if (font_id === 4) {
+        return 'comic-sans'
+    } else {
+        return ''
+    }
+}
+
+function translateTheme(theme_id) {
+    if (theme_id === 1) {
+        return 'light'
+    } else if (theme_id === 2) {
+        return 'dark'
+    } else if (theme_id === 3) {
+        return 'retro'
+    } else if (theme_id === 4) {
+        return 'pastel'
+    } else {
+        return ''
+    }
 }

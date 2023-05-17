@@ -36,7 +36,8 @@ passport.serializeUser(function (user, done) {
     });
 });
 
-passport.deserializeUser(async function (user, done) {
+// turn serialized object back into an object (but in our case, we don't need to do anything)
+passport.deserializeUser(async function(user, done) {
     const userModel = await User.findByPk(user.id, {
         include: [
             {
@@ -51,7 +52,7 @@ passport.deserializeUser(async function (user, done) {
             }
         ]
     });
-    process.nextTick(function () {
+    process.nextTick(function() {
         return done(null, userModel);
     });
 });

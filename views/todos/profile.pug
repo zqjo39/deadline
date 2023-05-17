@@ -3,6 +3,11 @@ extends ../layout
 block content
     div.content
         h1 Hello #{user.first_name}!
+
+        //h3 You can
+        //ul
+        //    each permission in user.subscription.permissions
+        //        li= permission.name
         //if user.can('add basic badge')
         a.button.primary(href = '/basic') Revert to Basic
         //if user.can('add standard badge')
