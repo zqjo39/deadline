@@ -8,10 +8,10 @@ block content
         //ul
         //    each permission in user.subscription.permissions
         //        li= permission.name
-        //if user.can('add basic badge')
-        a.button.primary(href = '/basic') Revert to Basic
-        //if user.can('add standard badge')
-        a.button.primary(href = '/standard') Subscribe to Standard
-        //if user.can('add premium badge')
-        a.button.primary(href = '/premium') Subscribe to Premium
+        if user.can('add basic badge')
+            a.button.primary(href = '/basic') Revert to Basic
+        if user.can('add standard badge')
+            a.button.primary(href = '/standard') Subscribe to Standard
+        if user.can('add premium badge')
+            a.button.primary(href = '/premium') Subscribe to Premium
         

@@ -12,13 +12,17 @@ module.exports.listAll = async function(req, res) {
     let pastItems = todos.filter(item => item.past && !item.complete);
     let currentItems = todos.filter(item => item.present && !item.complete);
     let futureItems = todos.filter(item => item.future && !item.complete);
+    // todo why do the translate functions hate me so much-
+        // come back to this later i am so sleep deprived
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
     res.render('todos/viewAll', {
         completeItems,
         pastItems,
         currentItems,
         futureItems,
-        font: translateFont(req.body.font_id),
-        theme: translateTheme(req.body.theme_id)
+        font,
+        theme
     });
     console.log(theme);
     console.log(font);

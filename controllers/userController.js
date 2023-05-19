@@ -69,7 +69,6 @@ module.exports.viewSettings = async function(req, res) {
 // todo come back to the "setTo"s later, it's got something to do with passport, since it was working before that
     // either that or the model's got something up with it
 module.exports.setToBasic = async function(req, res) {
-    const user = await User.findByPk(req.user.id);
     await User.update({
         subscription_id: 1
     }, {
@@ -77,11 +76,10 @@ module.exports.setToBasic = async function(req, res) {
             id: req.user.id
         }
     })
-    res.redirect('/', {user});
+    res.redirect('/');
 }
 
 module.exports.setToStandard = async function(req, res) {
-    const user = await User.findByPk(req.user.id);
     await User.update({
         subscription_id: 2
     }, {
@@ -89,11 +87,10 @@ module.exports.setToStandard = async function(req, res) {
             id: req.user.id
         }
     })
-    res.redirect('/' , {user});
+    res.redirect('/');
 }
 
 module.exports.setToPremium = async function(req, res) {
-    const user = await User.findByPk(req.user.id);
     await User.update({
         subscription_id: 3
     }, {
@@ -101,7 +98,7 @@ module.exports.setToPremium = async function(req, res) {
             id: req.user.id
         }
     })
-    res.redirect('/', {user});
+    res.redirect('/');
 }
 
 
