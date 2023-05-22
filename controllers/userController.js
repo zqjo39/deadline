@@ -1,4 +1,4 @@
-const {User} = require('../models');
+const {User, Subscription, Permission} = require('../models');
 const md5 = require('md5');
 const passport = require('passport');
 
@@ -45,7 +45,18 @@ module.exports.authenticate = passport.authenticate('local', {
 });
 
 module.exports.viewProfile = async function(req, res) {
-    const user = await User.findByPk(req.user.id);
+    const user = await User.findByPk(req.user.id, {
+        include: {
+            model: Subscription,
+            as: 'subscription',
+            include: [
+                {
+                    model: Permission,
+                    as: 'permissions'
+                }
+            ]
+        }
+    });
     console.log(user);
     res.render('todos/profile', {user})
 }
