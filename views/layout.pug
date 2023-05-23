@@ -3,19 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body(class = `theme ${theme}; font: ${font}`)
+  body(class = `${font} ${theme}` )
   div
-    nav
+    nav(class = `${theme}`)
       div.container
-        a(href = '/') Todo App
+        h3(class = `${theme}`)(href = '/') Todo App
         ul
           if user
             li
-              a(href = '/profile') Hello #{user.first_name}!
+              a(class = `${theme}`)(href = '/profile') Hello #{user.first_name}!
             li
-              a(href = '/settings') Settings
+              a(class = `${theme}`)(href = '/settings') Settings
             li
-              a(href = '/logout') Log Out
+              a(class = `${theme}`)(href = '/logout') Log Out
           else
             li
               a(href = '/login') Login

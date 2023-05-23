@@ -208,52 +208,121 @@ nav h3{
   font-size: 20px;
 }
 
+nav.title {
+  font-size: 20px;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
 }
 
-.font {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-}
-
-.font.lucida-grande {
+.lucida-grande {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.font.arial {
+.arial {
   font: 14px "Arial", Helvetica, Arial, sans-serif;
 }
 
-.font.times-new-roman {
+.times-new-roman {
   font: 14px "Times New Roman", Helvetica, Arial, sans-serif;
 }
 
-.font.comic-sans {
+.comic-sans {
   font: 14px "Comic Sans MS", Helvetica, Arial, sans-serif;
 }
 
-.theme {
+.light {
   background: #f3f4f6;
   color: black;
 }
 
-.theme.light {
-  background: #f3f4f6;
-  color: black;
+nav.light {
+
 }
 
-.theme.dark {
+content.light {
+
+}
+
+.dark {
   background: #2d2e30;
   color: white;
 }
 
-theme.retro {
+a.dark {
+  color: whitesmoke;
+}
+
+nav.dark {
+  background: #1a1a1c;
+  color: white;
+}
+
+.content.dark {
+  background: #232325;
+  color: white;
+}
+
+/*follow this example!*/
+.content.dark table thead {
+  background: #71717A;
+}
+
+/*.table thead{*/
+/*  background: #F4F4F5;*/
+/*}*/
+
+/*.table th, .table td{*/
+/*  padding: 12px 25px;*/
+/*}*/
+
+/*.table th{*/
+/*  color: #52525B;*/
+
+/*}*/
+
+/*.table td{*/
+/*  color: #27272A;*/
+/*  font-size: 16px;*/
+/*}*/
+
+
+/*.completed .table td{*/
+/*  color: #A1A1AA;*/
+/*}*/
+
+/*.table td a{*/
+/*  font-size: 14px;*/
+/*}*/
+
+/*.table tr:nth-child(2n){*/
+/*  background: #F4F4F5;*/
+/*}*/
+
+.retro {
   background: dimgrey;
   color: yellow;
 }
 
-theme.pastel {
+nav.retro {
+
+}
+
+content.retro {
+
+}
+
+.pastel {
   background: lightyellow;
   color: lightcoral;
+}
+
+nav.pastel {
+
+}
+
+content.pastel {
+
 }

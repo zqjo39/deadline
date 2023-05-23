@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    div.content
+    div.content(class = `${theme}`)
         div.row
             div.title
                 h1 #{todos.description} - #{translate}

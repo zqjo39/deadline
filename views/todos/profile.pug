@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    div.content
+    div.content(class = `${theme}`)
         h1 Hello #{user.first_name}!
 
         h3 You can
