@@ -128,13 +128,13 @@ function translateBooleanToComplete(item) {
 
 // todo find a way to use these to change fonts and themes; look at idcard for reference
 function translateFont(font_id) {
-    if (font_id === 1) {
+    if (font_id === '1') {
         return 'lucida-grande'
-    } else if (font_id === 2) {
+    } else if (font_id === '2') {
         return 'arial'
-    } else if (font_id === 3) {
+    } else if (font_id === '3') {
         return 'times-new-roman'
-    } else if (font_id === 4) {
+    } else if (font_id === '4') {
         return 'comic-sans'
     } else {
         return ''
@@ -142,13 +142,13 @@ function translateFont(font_id) {
 }
 
 function translateTheme(theme_id) {
-    if (theme_id === 1) {
+    if (theme_id === '1') {
         return 'light'
-    } else if (theme_id === 2) {
+    } else if (theme_id === '2') {
         return 'dark'
-    } else if (theme_id === 3) {
+    } else if (theme_id === '3') {
         return 'retro'
-    } else if (theme_id === 4) {
+    } else if (theme_id === '4') {
         return 'pastel'
     } else {
         return ''
