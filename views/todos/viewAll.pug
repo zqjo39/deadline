@@ -5,7 +5,7 @@ include ../mixins/itemList
 block content
   div.content(class = `${theme}`)
     section
-      header.page-header All Todos
+      header.page-header(class = `${theme}`) All Todos
 
     div.section-list
       +itemList('Past Due', pastItems)
@@ -17,7 +17,7 @@ block content
       +itemList('In The Future', futureItems)
 
     div.button-row
-      a.button.primary(href="/item/add") Add New Item
+      a.button.primary(class = `${theme}`)(href="/item/add") Add New Item
 
     div.section-list.completed
       +itemList('Completed Items', completeItems)

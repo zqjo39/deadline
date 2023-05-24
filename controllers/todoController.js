@@ -1,4 +1,4 @@
-const {Todo, User} = require('../models');
+const {Todo} = require('../models');
 
 module.exports.listAll = async function(req, res) {
     const todos = await Todo.findAll({
@@ -7,13 +7,10 @@ module.exports.listAll = async function(req, res) {
         }
     });
 
-    // todo define theme and font
     let completeItems = todos.filter(item => item.complete);
     let pastItems = todos.filter(item => item.past && !item.complete);
     let currentItems = todos.filter(item => item.present && !item.complete);
     let futureItems = todos.filter(item => item.future && !item.complete);
-    // todo why do the translate functions hate me so much-
-        // come back to this later i am so sleep deprived
     let font = translateFont(req.user.font_id);
     let theme = translateTheme(req.user.theme_id);
     res.render('todos/viewAll', {
@@ -126,10 +123,9 @@ function translateBooleanToComplete(item) {
     return isComplete;
 }
 
-// todo find a way to use these to change fonts and themes; look at idcard for reference
 function translateFont(font_id) {
     if (font_id === '1') {
-        return 'lucida-grande'
+        return ''
     } else if (font_id === '2') {
         return 'arial'
     } else if (font_id === '3') {
@@ -143,7 +139,7 @@ function translateFont(font_id) {
 
 function translateTheme(theme_id) {
     if (theme_id === '1') {
-        return 'light'
+        return ''
     } else if (theme_id === '2') {
         return 'dark'
     } else if (theme_id === '3') {

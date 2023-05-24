@@ -21,6 +21,37 @@ todo
     [~] how to set deadlines with calender
 [~] create function to keep completed items ouT OF THE INCOMPLETE AND THUS DUPLICATING-
 [~] add premium, serves as the permissions
-    [] find out how to get the translate function working!!!!! >:(
+    [~] find out how to get the translate function working!!!!! >:(
     [] change colors of website
     [] make everything look nice
+[] debug
+    [] strange highlight thing on .theme divs
+    [] new issue: colors aren't transferring to other pages
+
+palettes
+dark:
+--gunmetal: #2e3440ff;
+--charcoal: #3b4252ff;
+--charcoal-2: #434c5eff;
+--paynes-gray: #4c566aff;
+--lavender-web: #d8dee9ff;
+--alice-blue: #e5e9f0ff;
+--antiflash-white: #eceff4ff;
+
+retro:
+--reseda-green: #797d62ff;
+--moss-green: #9b9b7aff;
+--desert-sand: #d9ae94ff;
+--peach-yellow: #f1dca7ff;
+--sunglow: #ffcb69ff;
+--persian-orange: #d08c60ff;
+--beaver: #997b66ff;
+
+pastel:
+--lemon-chiffon: #fcf3c4ff;
+--light-orange: #fcdbbeff;
+--melon: #fbc3b8ff;
+--cherry-blossom-pink: #fbabb2ff;
+--bakermiller-pink: #fa92acff;
+--cyclamen: #fa7aa6ff;
+--cyclamen-2: #f962a0ff;

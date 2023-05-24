@@ -3,19 +3,20 @@ extends ../layout
 block content
     div.content(class = `${theme}`)
         // todo come up with other things to put in the settings
+            // find out how to keep user preferences as well
         div.form-header Settings
             div
                 form(action = '/settings' method = 'POST')
                     div.input-container
                         label(for = 'font_id') Font
-                        select(name = 'font_id' id = 'font_id' value = `${font_id}`)
+                        select(name = 'font_id' id = 'font_id' value = `${user.font_id}`)
                             option(value = 1) Lucida Grande
                             option(value = 2) Arial
                             option(value = 3) Times New Roman
                             option(value = 4) Comic Sans
                     div.input-container
                         label(for = 'theme_id') Theme
-                        select(name = 'theme_id' id = 'theme_id' value = `${theme_id}`)
+                        select(name = 'theme_id' id = 'theme_id' value = `${user.theme_id}`)
                             option(value = 1) Light
                             option(value = 2) Dark
                             option(value = 3) Retro
