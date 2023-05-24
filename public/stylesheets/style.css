@@ -237,9 +237,11 @@ nav.title {
   font: 14px "Comic Sans MS", Helvetica, Arial, sans-serif;
 }
 
+/*dark*/
+
 .dark {
-  background: #2d2e30;
-  color: white;
+  background: #434c5eff;
+  color: #eceff4ff;
 }
 
 a.dark {
@@ -247,45 +249,44 @@ a.dark {
 }
 
 nav.dark {
-  background: #1a1a1c;
-  color: white;
+  background: #2e3440ff;
+  color: #eceff4ff;
 }
 
 .content.dark {
-  background: #232325;
-  color: white;
+  background: #3b4252ff;
+  color: #eceff4ff;
 }
 
 .button.primary.dark{
-  background: grey;
-  color: #f5ffff;
-  border-color: grey;
+  background: #2e3440ff;
+  color: #eceff4ff;
+  border-color: #2e3440ff;
 }
 
 .content.dark page-header{
-  color: #eaeaf5;
+  color: #eceff4ff;
 }
 
 .content.dark list-header{
-  color: #eaeaf5;
+  color: #eceff4ff;
 }
 
-/*follow this example!*/
 .content.dark table thead {
-  background: #484848;
+  background: #eceff4ff;
 }
 
 .content.dark table th{
-  color: #f1f1f1;
+  color: #4c566aff;
 }
 
 .content.dark table td{
-  color: #f1f1f1;
+  color: #eceff4ff;
   font-size: 16px;
 }
 
 .content.dark .completed .table td{
-  color: #b4b9c2;
+  color: #bac5d5;
 }
 
 .content.dark table td a{
@@ -293,14 +294,14 @@ nav.dark {
 }
 
 .content.dark table tr:nth-child(2n){
-  background: #333333;
+  background: #434c5eff;
 }
 
 /*retro*/
 
 .retro {
-  background: #DFE0E2;
-  color: yellow;
+  background: #b08968ff;
+  color: #ede0d4ff;
 }
 
 a.retro {
@@ -308,60 +309,59 @@ a.retro {
 }
 
 nav.retro {
-  background: #1a1a1c;
-  color: white;
+  background: #7f5539ff;
+  color: #ede0d4ff;
 }
 
 .content.retro {
-  background: #232325;
-  color: white;
+  background: #9c6644ff;
+  color: #ede0d4ff;
 }
 
 .button.primary.retro{
-  background: grey;
-  color: #f5ffff;
-  border-color: grey;
+  background: #7f5539ff;
+  color: #ede0d4ff;
+  border-color: #7f5539ff;
 }
 
 .content.retro page-header{
-  color: #eaeaf5;
+  color: #ede0d4ff;
 }
 
 .content.retro list-header{
-  color: #eaeaf5;
+  color: #ede0d4ff;
 }
 
-/*follow this example!*/
 .content.retro table thead {
-  background: #484848;
+  background: #ede0d4ff;
 }
 
 .content.retro table th{
-  color: #f1f1f1;
+  color: #b08569ff;
 }
 
 .content.retro table td{
-  color: #f1f1f1;
+  color: #ede0d4ff;
   font-size: 16px;
 }
 
 .content.retro .completed .table td{
-  color: #b4b9c2;
+  color: #ddb892ff;
 }
 
 .content.retro table td a{
-  color: #ecf3ff;
+  color: #e6ccb2ff;
 }
 
 .content.retro table tr:nth-child(2n){
-  background: #333333;
+  background: #b08968ff;
 }
 
 /*pastel*/
 
 .pastel {
-  background: lightyellow;
-  color: lightcoral;
+  background: #ea9ba2ff;
+  color: #ffffffff;
 }
 
 a.pastel {
@@ -369,51 +369,50 @@ a.pastel {
 }
 
 nav.pastel {
-  background: #1a1a1c;
-  color: white;
+  background: #731933;
+  color: #ffffffff;
 }
 
 .content.pastel {
-  background: #232325;
-  color: white;
+  background: #83203eff;
+  color: #ffffffff;
 }
 
 .button.primary.pastel{
-  background: grey;
-  color: #f5ffff;
-  border-color: grey;
+  background: #3f4c51ff;
+  color: #ffffffff;
+  border-color: #3f4c51ff;
 }
 
 .content.pastel page-header{
-  color: #eaeaf5;
+  color: #ffffffff;
 }
 
 .content.pastel list-header{
-  color: #eaeaf5;
+  color: #ffffffff;
 }
 
-/*follow this example!*/
 .content.pastel table thead {
-  background: #484848;
+  background: #ffffffff;
 }
 
 .content.pastel table th{
-  color: #f1f1f1;
+  color: #b8475dff;
 }
 
 .content.pastel table td{
-  color: #f1f1f1;
+  color: #ffffffff;
   font-size: 16px;
 }
 
 .content.pastel .completed .table td{
-  color: #b4b9c2;
+  color: #cdb9ae;
 }
 
 .content.pastel table td a{
-  color: #ecf3ff;
+  color: #e6dcd7ff;
 }
 
 .content.pastel table tr:nth-child(2n){
-  background: #333333;
+  background: #731933;
 }

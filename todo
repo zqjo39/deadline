@@ -29,29 +29,96 @@ todo
     [] new issue: colors aren't transferring to other pages
 
 palettes
-dark:
---gunmetal: #2e3440ff;
---charcoal: #3b4252ff;
---charcoal-2: #434c5eff;
---paynes-gray: #4c566aff;
---lavender-web: #d8dee9ff;
---alice-blue: #e5e9f0ff;
---antiflash-white: #eceff4ff;
-
-retro:
---reseda-green: #797d62ff;
---moss-green: #9b9b7aff;
---desert-sand: #d9ae94ff;
---peach-yellow: #f1dca7ff;
---sunglow: #ffcb69ff;
---persian-orange: #d08c60ff;
---beaver: #997b66ff;
+pastel:
+--gunmetal: #3f4c51ff;
+--charcoal: #83203eff;
+--charcoal-2: #ea9ba2ff;
+--paynes-gray: #b8475dff;
+--lavender-web: #cdb9ae;
+--alice-blue: #e6dcd7ff;
+--antiflash-white: #ffffffff;
 
 pastel:
---lemon-chiffon: #fcf3c4ff;
---light-orange: #fcdbbeff;
---melon: #fbc3b8ff;
---cherry-blossom-pink: #fbabb2ff;
---bakermiller-pink: #fa92acff;
---cyclamen: #fa7aa6ff;
---cyclamen-2: #f962a0ff;
+--coffee: #3f4c51ff;
+--raw-umber: #83203eff;
+--chamoisee: #ea9ba2ff;
+--chamoisee-2: #b8475dff;
+--tan: #cdb9ae;
+--dun: #e6dcd7ff;
+--almond: #ffffffff;
+
+pastel:
+--outer-space: #3f4c51ff;
+--salmon-pink: #ea9ba2ff;
+--claret: #83203eff;
+--redwood: #b8475dff;
+--pale-dogwood: #cdb9ae;
+--timberwolf: #e6dcd7ff;
+--white: #ffffffff;
+
+
+nav
+background
+content
+text
+buttons
+table 1
+table 2
+
+.pastel {
+  background: #ea9ba2ff;
+  color: #ffffffff;
+}
+
+a.pastel {
+  color: whitesmoke;
+}
+
+nav.pastel {
+  background: #3f4c51ff;
+  color: #ffffffff;
+}
+
+.content.pastel {
+  background: #83203eff;
+  color: #ffffffff;
+}
+
+.button.primary.pastel{
+  background: #3f4c51ff;
+  color: #ffffffff;
+  border-color: #3f4c51ff;
+}
+
+.content.pastel page-header{
+  color: #ffffffff;
+}
+
+.content.pastel list-header{
+  color: #ffffffff;
+}
+
+.content.pastel table thead {
+  background: #ffffffff;
+}
+
+.content.pastel table th{
+  color: #b8475dff;
+}
+
+.content.pastel table td{
+  color: #ffffffff;
+  font-size: 16px;
+}
+
+.content.pastel .completed .table td{
+  color: #cdb9ae;
+}
+
+.content.pastel table td a{
+  color: #e6dcd7ff;
+}
+
+.content.pastel table tr:nth-child(2n){
+  background: #ea9ba2ff;
+}
