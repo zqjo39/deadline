@@ -62,7 +62,7 @@ module.exports.viewProfile = async function(req, res) {
 }
 
 module.exports.renderSettings = function(req, res) {
-    res.render('todos/settings');
+    res.render('todos/perks');
 }
 
 module.exports.viewSettings = async function(req, res) {
@@ -77,8 +77,6 @@ module.exports.viewSettings = async function(req, res) {
     res.redirect('/');
 }
 
-// todo come back to the "setTo"s later, it's got something to do with passport, since it was working before that
-    // either that or the model's got something up with it
 module.exports.setToBasic = async function(req, res) {
     await User.update({
         subscription_id: 1

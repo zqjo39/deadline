@@ -40,8 +40,8 @@ router.post('/register', addUserToViews, userController.register);
 router.get('/login', addUserToViews, userController.renderLogin);
 router.post('/login', addUserToViews, userController.authenticate);
 
-router.get('/settings', addUserToViews, redirectGuests, userController.renderSettings);
-router.post('/settings', addUserToViews, redirectGuests, userController.viewSettings);
+router.get('/perks', addUserToViews, redirectGuests, userController.renderSettings);
+router.post('/perks', addUserToViews, redirectGuests, userController.viewSettings);
 
 router.get('/profile', addUserToViews, redirectGuests, userController.viewProfile);
 router.get('/basic', addUserToViews, redirectGuests, userController.setToBasic);

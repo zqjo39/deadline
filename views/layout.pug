@@ -12,8 +12,9 @@ html
           if user
             li
               a(class = `${theme}`)(href = '/profile') Hello #{user.first_name}!
-            li
-              a(class = `${theme}`)(href = '/settings') Settings
+            if user.can('add standard badge') || user.can('add premium badge')
+                li
+                    a(class = `${theme}`)(href = '/perks') Perks
             li
               a(class = `${theme}`)(href = '/logout') Log Out
           else

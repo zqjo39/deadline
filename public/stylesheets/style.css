@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 html{
   margin: 0;
   padding: 0;
@@ -240,7 +241,6 @@ nav.title {
 /*dark*/
 
 .dark {
-  background: #434c5eff;
   color: #eceff4ff;
 }
 
@@ -297,122 +297,121 @@ nav.dark {
   background: #434c5eff;
 }
 
-/*retro*/
+/*woodland*/
 
-.retro {
-  background: #b08968ff;
+.woodland {
   color: #ede0d4ff;
 }
 
-a.retro {
+a.woodland {
   color: whitesmoke;
 }
 
-nav.retro {
+nav.woodland {
   background: #7f5539ff;
   color: #ede0d4ff;
 }
 
-.content.retro {
+.content.woodland {
   background: #9c6644ff;
   color: #ede0d4ff;
 }
 
-.button.primary.retro{
+.button.primary.woodland{
   background: #7f5539ff;
   color: #ede0d4ff;
   border-color: #7f5539ff;
 }
 
-.content.retro page-header{
+.content.woodland page-header{
   color: #ede0d4ff;
 }
 
-.content.retro list-header{
+.content.woodland list-header{
   color: #ede0d4ff;
 }
 
-.content.retro table thead {
+.content.woodland table thead {
   background: #ede0d4ff;
 }
 
-.content.retro table th{
+.content.woodland table th{
   color: #b08569ff;
 }
 
-.content.retro table td{
+.content.woodland table td{
   color: #ede0d4ff;
   font-size: 16px;
 }
 
-.content.retro .completed .table td{
+.content.woodland .completed .table td{
   color: #ddb892ff;
 }
 
-.content.retro table td a{
+.content.woodland table td a{
   color: #e6ccb2ff;
 }
 
-.content.retro table tr:nth-child(2n){
+.content.woodland table tr:nth-child(2n){
   background: #b08968ff;
 }
 
-/*pastel*/
+/*rose*/
 
-.pastel {
-  background: #ea9ba2ff;
+.rose {
   color: #ffffffff;
 }
 
-a.pastel {
+a.rose {
   color: whitesmoke;
 }
 
-nav.pastel {
+nav.rose {
   background: #731933;
   color: #ffffffff;
 }
 
-.content.pastel {
-  background: #83203eff;
+.content.rose {
+  background: #942446;
   color: #ffffffff;
 }
 
-.button.primary.pastel{
-  background: #3f4c51ff;
+.button.primary.rose{
+  background: #731933;
   color: #ffffffff;
-  border-color: #3f4c51ff;
+  border-color: #731933;
 }
 
-.content.pastel page-header{
-  color: #ffffffff;
-}
-
-.content.pastel list-header{
+.content.rose page-header{
+  background: #942446;
   color: #ffffffff;
 }
 
-.content.pastel table thead {
+.content.rose list-header{
+  color: #ffffffff;
+}
+
+.content.rose table thead {
   background: #ffffffff;
 }
 
-.content.pastel table th{
+.content.rose table th{
   color: #b8475dff;
 }
 
-.content.pastel table td{
+.content.rose table td{
   color: #ffffffff;
   font-size: 16px;
 }
 
-.content.pastel .completed .table td{
+.content.rose .completed .table td{
   color: #cdb9ae;
 }
 
-.content.pastel table td a{
+.content.rose table td a{
   color: #e6dcd7ff;
 }
 
-.content.pastel table tr:nth-child(2n){
+.content.rose table tr:nth-child(2n){
   background: #731933;
 }

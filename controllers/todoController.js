@@ -143,9 +143,9 @@ function translateTheme(theme_id) {
     } else if (theme_id === '2') {
         return 'dark'
     } else if (theme_id === '3') {
-        return 'retro'
+        return 'woodland'
     } else if (theme_id === '4') {
-        return 'pastel'
+        return 'rose'
     } else {
         return ''
     }
