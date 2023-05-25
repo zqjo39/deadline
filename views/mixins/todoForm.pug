@@ -1,15 +1,15 @@
 mixin todoForm(item, saveUrl, cancelUrl)
   form(action=saveUrl method="post")
-    div.input-container
-      label(for="description") Item Description
+    div.input-container(class = `${theme}`)
+      label(class = `${theme}`)(for="description") Item Description
       input(type="text" name="description" id="description" value=`${item.description}`)
 
-      label(for="notes") Item Notes
+      label(class = `${theme}`)(for="notes") Item Notes
       input(type="text" name="notes" id="notes" value=`${item.notes}`)
 
-      label(for="deadline") Deadline
+      label(class = `${theme}`)(for="deadline") Deadline
       input(type="date" name="deadline" id="deadline" value=`${item.deadline}`)
 
     div.form-button-row
-      a.button(href=cancelUrl) Cancel
-      button.button.primary(type="Submit") Save
+      a.button(class = `${theme}`)(href=cancelUrl) Cancel
+      button.button.primary(class = `${theme}`)(type="Submit") Save

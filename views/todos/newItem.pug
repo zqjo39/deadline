@@ -3,6 +3,6 @@ extends ../layout
 block content
   include ../mixins/todoForm
   div.content(class = `${theme}`)
-    h3.form-header Add New Item
+    h3.form-header(class = `${theme}`) Add New Item
     +todoForm(item, `/item/add`,'/')
 

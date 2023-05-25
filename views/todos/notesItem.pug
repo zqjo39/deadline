@@ -8,8 +8,8 @@ block content
                 div.subtitle
                     h3 Complete by #{todos.deadline}
             div.actions-notes
-                a.button(href='/') Back to Home
-                a.button(href=`/item/edit/${todos.id}`) Edit
-                a.button(href=`/item/delete/${todos.id}` class="btn btn-danger" ) Delete
+                a.button(class = `${theme}`)(href='/') Back to Home
+                a.button(class = `${theme}`)(href=`/item/edit/${todos.id}`) Edit
+                a.button(class = `${theme}`)(href=`/item/delete/${todos.id}` class="btn btn-danger" ) Delete
         ul
             li= todos.notes

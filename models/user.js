@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
     can(action) {
-      // todo what the heck is going on with subscription-
       let match = this.subscription.permissions.find(function(permission) {
         return permission.name === action
       });

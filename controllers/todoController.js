@@ -32,8 +32,10 @@ module.exports.displayAddItem = function(req, res) {
         deadline: new Date(),
         notes: ''
     }
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
     res.render('todos/newItem', {
-        item
+        item, font, theme
     })
 };
 
@@ -54,10 +56,12 @@ module.exports.viewEditItem = async function(req, res) {
             id: req.params.id,
             user_id: req.user.id
         }});
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
     if (!todo) { // if id cannot be found
         res.redirect('/');
     } else {
-        res.render('todos/editItem', {item: todo})
+        res.render('todos/editItem', {item: todo, font, theme})
     }
 };
 
@@ -110,7 +114,9 @@ module.exports.markItemIncomplete = async function(req, res) {
 module.exports.viewNote = async function(req, res) {
     const todos = await Todo.findByPk(req.params.id);
     let translate = translateBooleanToComplete(todos);
-    res.render('todos/notesItem', {todos, translate})
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
+    res.render('todos/notesItem', {todos, translate, font, theme})
 }
 
 function translateBooleanToComplete(item) {

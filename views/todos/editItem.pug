@@ -3,5 +3,5 @@ extends ../layout
 block content
   include ../mixins/todoForm
   div.content(class = `${theme}`)
-    h3.form-header Update Item
+    h3.form-header(class = `${theme}`) Update Item
     +todoForm(item, `/item/edit/${item.id}`,'/')

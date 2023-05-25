@@ -57,15 +57,19 @@ module.exports.viewProfile = async function(req, res) {
             ]
         }
     });
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
     console.log(user);
-    res.render('todos/profile', {user})
+    res.render('todos/profile', {user, font, theme})
 }
 
-module.exports.renderSettings = function(req, res) {
-    res.render('todos/perks');
+module.exports.renderPerks = function(req, res) {
+    let font = translateFont(req.user.font_id);
+    let theme = translateTheme(req.user.theme_id);
+    res.render('todos/perks', {font, theme});
 }
 
-module.exports.viewSettings = async function(req, res) {
+module.exports.viewPerks = async function(req, res) {
     await User.update({
         font_id: req.body.font_id,
         theme_id: req.body.theme_id
@@ -115,3 +119,31 @@ module.exports.logout = function (req, res) {
     req.logout();
     res.redirect('/login');
 };
+
+function translateFont(font_id) {
+    if (font_id === '1') {
+        return ''
+    } else if (font_id === '2') {
+        return 'arial'
+    } else if (font_id === '3') {
+        return 'times-new-roman'
+    } else if (font_id === '4') {
+        return 'comic-sans'
+    } else {
+        return ''
+    }
+}
+
+function translateTheme(theme_id) {
+    if (theme_id === '1') {
+        return ''
+    } else if (theme_id === '2') {
+        return 'dark'
+    } else if (theme_id === '3') {
+        return 'woodland'
+    } else if (theme_id === '4') {
+        return 'rose'
+    } else {
+        return ''
+    }
+}

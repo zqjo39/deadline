@@ -12,7 +12,11 @@ block content
                     label(for = 'password') Password:
                     input(type = 'password' name = 'password' id = 'password' required = true)
 
+            div.helper-text
+                a(href = '/register') Need an account?
+
             div.form-button-row
                 button.button.primary(type = 'submit') Login
+
         if error
             p.error= error

@@ -2,14 +2,12 @@ extends ../layout
 
 block content
     div.content(class = `${theme}`)
-        // todo come up with other things to put in the settings
-            // find out how to keep user preferences as well
-        div.form-header Settings
+        div.form-header(class = `${theme}`) Settings
             div
                 form(action = '/perks' method = 'POST')
                     if user.can('add standard badge') || user.can('add premium badge')
                         div.input-container
-                            label(for = 'font_id') Font
+                            label(class = `${theme}`)(for = 'font_id') Font
                             select(name = 'font_id' id = 'font_id' value = `${user.font_id}`)
                                 option(value = 1) Lucida Grande
                                 option(value = 2) Arial
@@ -17,11 +15,11 @@ block content
                                 option(value = 4) Comic Sans
                     if user.can('add premium badge')
                         div.input-container
-                            label(for = 'theme_id') Theme
+                            label(class = `${theme}`)(for = 'theme_id') Theme
                             select(name = 'theme_id' id = 'theme_id' value = `${user.theme_id}`)
                                 option(value = 1) Light
                                 option(value = 2) Dark
                                 option(value = 3) Woodland
                                 option(value = 4) Rose
                     if user.can('add standard badge') || user.can('add premium badge')
-                        button.button.primary(type = 'submit') Submit
+                        button.button.primary(class = `${theme}`)(type = 'submit') Submit
